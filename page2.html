@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        .box{
+  padding: 10px;
+  margin:0;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);  
+  }
+  .box{
+    border:black;
+    border-width:5px;
+    border-style: solid;
+    border-radius: 10px;
+  }
+    </style>
+   
+</head>
+<body>
+    <div class="box">
+        <h1>Select any option</h1>
+        <ol>
+            <li>Withdraw</li>
+            <li>Deposit</li>
+            <li>Balance</li>
+            <li>Exit</li>
+        </ol>
+        <select id="sel" onchange="selectdisplay()">
+            <option>Select Option</option>
+            <option value="1.Withdraw">1</option>
+            <option value="2.Deposit">2</option>
+            <option value="3.Balance">3</option>
+            <option value="4.Exit">4</option>
+        </select>
+        <script>
+            function selectdisplay()
+        {
+          var x=document.getElementById("sel").value;
+          document.getElementById('inpvalue').innerHTML=x;
+          
+        } </script>
+        <p id="inpvalue"></p>
+        <br>
+        <input text="text" id="amount" placeholder="Enter the amt";>
+        <br><br>
+        <button onclick="select()">Submit</button>
+         <script>
+            function select()
+{
+  var x=document.getElementById("sel").value;
+  var tamt=50000;
+  var amt=document.getElementById("amount").value;
+  amt=Number(amt);
+  var bal=tamt;
+
+    if(x=="4.Exit")
+    {
+        alert("Thank you");
+        window.location.assign("index.html");
+    }
+    if(x=="1.Withdraw")
+    {
+        if(amt>0 && amt<=tamt)
+        {   
+            bal=tamt-amt;
+            alert("Withdrawa sucessful");
+            alert("Balance amt: "+bal);
+        }
+        else
+        {
+            alert("Enter the correct amount")
+        }
+    }
+    if(x=="2.Deposit")
+    {
+        if(amt>=0 && amt<=tamt)
+        {   
+            bal=tamt+amt;
+            alert("Deposit sucessful");
+            alert("Balance amt: "+bal);
+        }
+        else
+        {
+            alert("Enter the correct amount")
+        }
+    }
+    if(x=="3.Balance")
+    {
+        alert("Balance: "+bal)
+    }
+
+  
+}
+
+         </script>
+            
+    </div>
+</body>

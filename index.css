@@ -1,0 +1,17 @@
+.box{
+  padding: 10px;
+  margin:0;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    
+  }
+  .box{
+    border:black;
+    border-width:5px;
+    border-style: solid;
+    border-radius: 10px;
+  }
+  
+  
